@@ -2,6 +2,7 @@ import { useState } from "react";
 import port1 from "./../../assets/poert1.png";
 import port2 from "./../../assets/port2.png";
 import port3 from "./../../assets/port3.png";
+import { Helmet } from "react-helmet";
 
 const Protfolio = () => {
   const [img, setImg] = useState([
@@ -49,7 +50,11 @@ const Protfolio = () => {
   }
   return (
     <>
-      <div className="mt-[7rem] ">
+      <Helmet>
+      <title>Protfolio</title>
+    </Helmet>
+          <div className=" mt-[92px] min-h-[calc(-112px+100vh);]">
+          <div className=" pt-10">
         <div className="text-center text-[#2c3e50]">
           <h1 className="font-bold uppercase mb-5 text-[calc(1.375rem+1.5vw)]">
             portfolio component
@@ -74,8 +79,9 @@ const Protfolio = () => {
           </div>
         ))}
         <div  onClick={closeModuol} className=" moduol hidden bg-[#4b5563]/70 z-50 fixed top-0 bottom-0 end-0 start-0 justify-center items-center ">
-          <img src={src} className=" max-w-3xl" alt="..." />
+          <img src={src} className=" w-[600px]" alt="..." />
         </div>
+      </div>
       </div>
     </>
   );

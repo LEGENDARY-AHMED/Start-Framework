@@ -1,13 +1,36 @@
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import "./Navbar.css"
+import "./Navbar.css";
+
 const Navbar = () => {
+  const [isMinimized, setIsMinimized] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setIsMinimized(true);
+      } else {
+        setIsMinimized(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <nav className="bg-[#2c3e50] py-7 border-gray-200 uppercase text-white font-bold fixed top-0 start-0 end-0 z-10 ">
-        <div className="container lg:w-[90%] px-4 flex flex-wrap items-center justify-between mx-auto ">
+      <nav
+        className={`navbar bg-[#2c3e50] py-7 border-gray-200 uppercase text-white font-bold fixed top-0 start-0 end-0 z-10 ${
+          isMinimized ? "minimized" : ""
+        }`}
+      >
+        <div className="container lg:w-[90%] px-4 flex flex-wrap items-center justify-between mx-auto">
           <Link
             to="/Home"
-            className="flex text-3xl  items-center space-x-3 rtl:space-x-reverse"
+            className="flex text-[calc(1.325rem+.9vw)] items-center space-x-3 rtl:space-x-reverse"
           >
             Start Framework
           </Link>
@@ -36,7 +59,7 @@ const Navbar = () => {
             </svg>
           </button>
           <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul className="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <ul className="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
               <li>
                 <NavLink
                   to="/about"
@@ -53,7 +76,6 @@ const Navbar = () => {
                   Protfolio
                 </NavLink>
               </li>
-
               <li>
                 <NavLink
                   to="/Contact"

@@ -1,9 +1,16 @@
+import { Helmet } from "react-helmet";
+
 const About = () => {
   return (
     <>
-      <div className="flex flex-col justify-center items-center h-screen bg-[#1abc9c] ">
+      <Helmet>
+      <title>About</title>
+    </Helmet>
+      <div className="flex flex-col justify-center items-center mt-[92px] min-h-[calc(-112px+100vh)] bg-[#1abc9c] ">
         <div className="text-center text-white">
-          <h1 className="font-bold uppercase mb-5 text-[calc(1.375rem+1.5vw)]">about component</h1>
+          <h1 className="font-bold uppercase mb-5 text-[calc(1.375rem+1.5vw)]">
+            about component
+          </h1>
           <div className="flex mb-5 justify-center items-center">
             <div className="w-[80px] h-[4px] bg-white"></div>
             <li className=" fa-solid fa-star mx-4"></li>

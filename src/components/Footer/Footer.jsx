@@ -4,12 +4,12 @@ const Footer = () => {
  <footer className="bg-[#2c3e50] text-white">
   <div className="grid mx-auto container lg:w-[90%] text-center grid-cols-1 gap-8 px-4 py-6 lg:py-24 md:grid-cols-3">
     <div>
-      <h2 className="mb-2 text-3xl font-semibold">LOCATION</h2>
+      <h2 className="mb-2 text-[calc(1.3rem+.6vw)] font-semibold">LOCATION</h2>
       <p  className="mb-1">2215 John Daniel Drive</p>
       <p>Clark, MO 65243</p>
     </div>
     <div>
-      <h2 className="mb-2 text-3xl font-semibold ">
+      <h2 className="mb-2 text-[calc(1.3rem+.6vw)] font-semibold ">
         AROUND THE WEB
       </h2>
       <ul>
@@ -20,7 +20,7 @@ const Footer = () => {
       </ul>
     </div>
     <div>
-      <h2 className="mb-2 text-3xl font-semibold">
+      <h2 className="mb-2 text-[calc(1.3rem+.6vw)] font-semibold">
         ABOUT FREELANCER
       </h2>
       <p>
